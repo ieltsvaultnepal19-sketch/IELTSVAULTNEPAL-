@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>IELTSVaultNepal – Original IELTS Preparation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* animated gradient bg for hero area */
+        .hero-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* logo */
+        .logo-section {
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            max-width: 220px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        /* headings */
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 2rem 0 1.5rem;
+            text-align: center;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1e3a5f, #2c5282);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #1e3a5f;
+            margin: 0.75rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* product grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            border: 1px solid #eef2f6;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* delay each card */
+        .product-card:nth-child(1) { animation-delay: 0.05s; }
+        .product-card:nth-child(2) { animation-delay: 0.1s; }
+        .product-card:nth-child(3) { animation-delay: 0.15s; }
+        .product-card:nth-child(4) { animation-delay: 0.2s; }
+        .product-card:nth-child(5) { animation-delay: 0.25s; }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 30px -12px rgba(0,0,0,0.15);
+            border-color: #cbd5e1;
+        }
+
+        .product-image {
+            width: 100%;
+            max-height: 260px;
+            object-fit: contain;
+            background: #fafcff;
+            padding: 1rem;
+            transition: transform 0.25s ease;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.02);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #0f2b3d;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            font-size: 0.875rem;
+            color: #334155;
+            margin-bottom: 1rem;
+        }
+        .product-description ul {
+            padding-left: 1.25rem;
+            margin: 0.5rem 0;
+        }
+        .product-description li {
+            margin: 0.3rem 0;
+        }
+        .product-description p {
+            margin: 0.75rem 0 0.25rem;
+        }
+
+        .btn-order {
+            display: inline-block;
+            background: #1e3a5f;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            text-align: center;
+            transition: all 0.2s;
+            margin-top: 1rem;
+            align-self: flex-start;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+        }
+        .btn-order:hover {
+            background: #2c5282;
+            transform: translateX(4px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* social links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0 1.5rem;
+        }
+        .social-icon {
+            font-size: 2rem;
+            color: #1e3a5f;
+            transition: all 0.2s;
+        }
+        .social-icon:hover {
+            color: #2c5282;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            border-top: 1px solid #e9edf2;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #5b6e8c;
+        }
+
+        /* response */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .product-grid {
+                gap: 1.25rem;
+            }
+            .product-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero-bg">
+    <div class="container">
+        <div class="logo-section">
+            <img class="logo" src="logo.jpg" alt="IELTSVaultNepal">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Our Practice Materials</h2>
+
+    <div class="product-grid">
+
+        <!-- Tier 1 Premium Practice Material -->
+        <div class="product-card">
+            <img class="product-image" src="tier1.jpg" alt="Tier 1 Practice Material">
+            <div class="product-content">
+                <div class="product-title">Tier 1 IELTS Complete Practice Material – Premium</div>
+                <div class="product-description">
+                    <ul>
+                        <li>Listening: test format, 7 cheat codes, all question types, original audio scripts, step‑by‑step walkthroughs + “why this works” summaries.</li>
+                        <li>Reading: 60‑min structure, 20‑min rule, all task types, original passages, distractors, key strategies.</li>
+                        <li>Writing: Task 1 (reporter) vs Task 2 (lawyer), 15 cheat codes, vocabulary bank, 9 Task 1 types + 5 Task 2 types + mixed type, full model answers.</li>
+                        <li>Speaking: Parts 1‑3 breakdown, 10 cheat codes, cue card guide, vocabulary, phrases, idioms, 3 full sample tests, 5 mock tests.</li>
+                        <li>Over 150 original practice questions – unique examples, exclusive scenarios.</li>
+                    </ul>
+                    <p><strong>This book is available both in ebook and physical (within Nepal).</strong></p>
+                    <p>To get this book, click the DM to order button below and send us your name, email address, and country on Instagram. We'll send it to your email after payment.</p>
+                </div>
+                <a href="https://www.instagram.com/ielts.vaultnepal/" class="btn-order" target="_blank">DM to order</a>
+            </div>
+        </div>
+
+        <!-- Tier 2 Essential Practice Material -->
+        <div class="product-card">
+            <img class="product-image" src="tier2.jpg" alt="Tier 2 Practice Material">
+            <div class="product-content">
+                <div class="product-title">Tier 2 IELTS Complete Practice Material – Essential</div>
+                <div class="product-description">
+                    <ul>
+                        <li>Complete 420+ page guide covering Listening, Reading, Writing, and Speaking.</li>
+                        <li>Step‑by‑step strategies for every task type.</li>
+                        <li>Practice tasks with answer keys.</li>
+                        <li>Band 9 sample answers for Writing and Speaking.</li>
+                        <li>Full mock tests to simulate the real exam.</li>
+                        <li>Perfect for self‑study students targeting Band 6.5 – 8+.</li>
+                        <li>Written in simple, clear English with real exam examples.</li>
+                    </ul>
+                    <p><strong>This book is available in ebook.</strong></p>
+                    <p>To get this book, click the DM to order button below and send us your name, email address, and country on Instagram. We'll send it to your email after payment.</p>
+                </div>
+                <a href="https://www.instagram.com/ielts.vaultnepal/" class="btn-order" target="_blank">DM to order</a>
+            </div>
+        </div>
+
+        <!-- Tier 1 Premium Vocabulary Book -->
+        <div class="product-card">
+            <img class="product-image" src="vocab1.jpg" alt="Tier 1 Vocabulary Book">
+            <div class="product-content">
+                <div class="product-title">Tier 1 Premium Vocabulary Book</div>
+                <div class="product-description">
+                    <ul>
+                        <li>Chapter 1: 800 Advanced C2 Words</li>
+                        <li>Chapter 2: 250 Idioms</li>
+                        <li>Chapter 3: 250 Phrases for Speaking & Writing</li>
+                        <li>Chapter 4: 150 Tongue Twisters</li>
+                        <li>Chapter 5: 150 Root Words, Prefixes & Suffixes</li>
+                        <li>Chapter 6: 200 Pronunciation Guide</li>
+                        <li>Chapter 7: 100 Synonyms & Antonyms Pairs</li>
+                        <li>Chapter 8: 100 Advanced Collocations</li>
+                        <li>Chapter 9: 500+ Premium C1/C2 Practical Words</li>
+                    </ul>
+                    <p><strong>This book is available in ebook.</strong></p>
+                    <p>To get this book, click the DM to order button below and send us your name, email address, and country on Instagram. We'll send it to your email after payment.</p>
+                </div>
+                <a href="https://www.instagram.com/ielts.vaultnepal/" class="btn-order" target="_blank">DM to order</a>
+            </div>
+        </div>
+
+        <!-- Tier 2 Power Vocabulary Book -->
+        <div class="product-card">
+            <img class="product-image" src="vocab2.jpg" alt="Tier 2 Vocabulary Book">
+            <div class="product-content">
+                <div class="product-title">Tier 2 Power Vocabulary Book</div>
+                <div class="product-description">
+                    <ul>
+                        <li>Chapter 1: 400 Advanced C2 Words (20 categories)</li>
+                        <li>Chapter 2: 150 Unique Idioms</li>
+                        <li>Chapter 3: 150 Unique Phrases for Speaking & Writing</li>
+                        <li>Chapter 4: 50 Tongue Twisters</li>
+                        <li>Chapter 5: 50 Root Words, Prefixes & Suffixes</li>
+                        <li>Chapter 6: 200+ Practical C1/C2 Words for Daily Use</li>
+                    </ul>
+                    <p><strong>This book is available in ebook.</strong></p>
+                    <p>To get this book, click the DM to order button below and send us your name, email address, and country on Instagram. We'll send it to your email after payment.</p>
+                </div>
+                <a href="https://www.instagram.com/ielts.vaultnepal/" class="btn-order" target="_blank">DM to order</a>
+            </div>
+        </div>
+
+        <!-- Online Classes -->
+        <div class="product-card">
+            <img class="product-image" src="onlineclass.jpg" alt="Online Classes">
+            <div class="product-content">
+                <div class="product-title">IELTS Online Classes</div>
+                <div class="product-description">
+                    <ul>
+                        <li>Clear explanation of all IELTS Academic sections</li>
+                        <li>Step‑by‑step guidance for every task type</li>
+                        <li>Practical strategies to approach questions correctly</li>
+                        <li>Writing guidance focused on task understanding and structure</li>
+                        <li>Speaking practice based on real exam‑style questions</li>
+                        <li>Vocabulary and sentence‑building support</li>
+                        <li>Regular practice with clear doubt‑solving</li>
+                    </ul>
+                    <p><strong>First‑time test takers – get clear guidance instead of confusion.</strong></p>
+                    <p>To join, click the DM to join button below and send us your name and email on Instagram.</p>
+                </div>
+                <a href="https://www.instagram.com/ielts.vaultnepal/" class="btn-order" target="_blank">DM to join</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social links -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/ielts.vaultnepal" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@ieltsvaultnepal" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/share/18W7WuANEG/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <footer>
+        &copy; 2026 IELTSVaultNepal. All rights reserved.
+    </footer>
+</div>
+
+</body>
+</html>
